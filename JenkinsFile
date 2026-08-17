@@ -21,5 +21,11 @@ pipeline {
                 sh 'docker images | grep hello-jenkins-image'
             }
         }
+        post { 
+        always { 
+            echo 'Cleaning images...!'
+            sh 'docker image prune'
+            }
+        }
     }
 }

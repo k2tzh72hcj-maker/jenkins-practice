@@ -25,7 +25,7 @@ pipeline {
      post { 
         always { 
             echo 'Cleaning images...!'
-            sh 'docker rm -f'
+            sh 'docker rm hello-jenkins-image -f'
             }
         }
 }

@@ -16,8 +16,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
-                sh 'echo "Pretend deploy step here"'
+                echo 'Building Docker image...'
+                sh 'docker build -t hello-jenkins-image .'
+                sh 'docker images | grep hello-jenkins-image'
             }
         }
     }
